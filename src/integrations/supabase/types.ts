@@ -14,7 +14,119 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      configuracoes: {
+        Row: {
+          criado_em: string
+          id: string
+          nome_empresa: string
+          tema: string
+          user_id: string
+        }
+        Insert: {
+          criado_em?: string
+          id?: string
+          nome_empresa?: string
+          tema?: string
+          user_id: string
+        }
+        Update: {
+          criado_em?: string
+          id?: string
+          nome_empresa?: string
+          tema?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      produtos: {
+        Row: {
+          categoria: string
+          criado_em: string
+          descricao: string
+          estoque: number
+          estoque_minimo: number
+          id: string
+          nome: string
+          preco_custo: number
+          preco_venda: number
+          user_id: string
+        }
+        Insert: {
+          categoria?: string
+          criado_em?: string
+          descricao?: string
+          estoque?: number
+          estoque_minimo?: number
+          id?: string
+          nome: string
+          preco_custo?: number
+          preco_venda?: number
+          user_id: string
+        }
+        Update: {
+          categoria?: string
+          criado_em?: string
+          descricao?: string
+          estoque?: number
+          estoque_minimo?: number
+          id?: string
+          nome?: string
+          preco_custo?: number
+          preco_venda?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      vendas: {
+        Row: {
+          cliente: string | null
+          custo_total: number
+          data_venda: string
+          desconto: number
+          forma_pagamento: string
+          id: string
+          produto_id: string
+          quantidade: number
+          user_id: string
+          valor_bruto: number
+          valor_liquido: number
+        }
+        Insert: {
+          cliente?: string | null
+          custo_total: number
+          data_venda?: string
+          desconto?: number
+          forma_pagamento: string
+          id?: string
+          produto_id: string
+          quantidade: number
+          user_id: string
+          valor_bruto: number
+          valor_liquido: number
+        }
+        Update: {
+          cliente?: string | null
+          custo_total?: number
+          data_venda?: string
+          desconto?: number
+          forma_pagamento?: string
+          id?: string
+          produto_id?: string
+          quantidade?: number
+          user_id?: string
+          valor_bruto?: number
+          valor_liquido?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "vendas_produto_id_fkey"
+            columns: ["produto_id"]
+            isOneToOne: false
+            referencedRelation: "produtos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
