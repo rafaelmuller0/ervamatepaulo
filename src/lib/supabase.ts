@@ -1,5 +1,8 @@
 // Usa o cliente do Lovable Cloud (configurado automaticamente).
-export { supabase } from "@/integrations/supabase/client";
+import { supabase as cloudClient } from "@/integrations/supabase/client";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const supabase = cloudClient as any;
 
 export const isSupabaseConfigured = true;
 
