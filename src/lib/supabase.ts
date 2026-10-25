@@ -1,24 +1,11 @@
-import { createClient } from "@supabase/supabase-js";
+// Usa o cliente do Lovable Cloud (configurado automaticamente).
+import { supabase as cloudClient } from "@/integrations/supabase/client";
 
-const url = import.meta.env.VITE_SUPABASE_URL as string | undefined;
-const key = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const supabase = cloudClient as any;
 
-export const isSupabaseConfigured = Boolean(
-  url &&
-    key &&
-    url.startsWith("https://") &&
-    !url.includes("SEU-PROJETO") &&
-    !key.includes("SUA_CHAVE") &&
-    !key.includes("placeholder"),
-);
-
-// O fallback permite que a tela de configuração seja exibida sem derrubar o app.
-// A autenticação deve ser bloqueada na interface até que as credenciais reais existam.
-export const supabase = createClient(
-  url || "https://example.supabase.co",
-  key || "public-anon-key-placeholder",
-);
+export const isSupabaseConfigured = true;
 
 export function getSupabaseSetupMessage() {
-  return "O Supabase ainda não está configurado neste computador. Crie um arquivo .env na pasta do projeto com VITE_SUPABASE_URL e VITE_SUPABASE_ANON_KEY do seu projeto Supabase. Depois pare e reinicie o servidor (Ctrl+C e npm run dev).";
+  return "Não foi possível conectar ao servidor. Tente novamente em instantes.";
 }
