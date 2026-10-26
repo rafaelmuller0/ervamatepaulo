@@ -65,3 +65,18 @@
 @keyframes confirmCardIn{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(max-width:480px){.confirm-card{padding:24px 20px;border-radius:17px}.confirm-card h2{font-size:19px}.confirm-actions{flex-direction:column-reverse;align-items:stretch}.confirm-actions .button{width:100%}}
 @media(prefers-reduced-motion:reduce){.confirm-backdrop,.confirm-card{animation:none}}
+
+
+/* Modal de recebimento de devedores, no mesmo padrão das confirmações */
+.payment-modal{max-width:500px;}
+.payment-modal .modal-heading{align-items:flex-start;gap:16px;margin-bottom:20px;}
+.payment-modal .modal-heading h2{margin:5px 0 0;line-height:1.35;}
+.payment-summary{display:grid;grid-template-columns:minmax(100px,.75fr) minmax(0,1.4fr);gap:10px 16px;padding:17px 18px;margin:0 0 22px;border:1px solid var(--border);border-radius:14px;background:var(--surface-soft, #f6f8f5);}
+.payment-summary span{font-size:12px;line-height:1.5;color:var(--muted);}
+.payment-summary b{font-size:13px;line-height:1.5;overflow-wrap:anywhere;color:var(--text);}
+.payment-summary strong{font-size:18px;line-height:1.4;color:var(--success,#24783a);}
+.payment-modal>label{display:flex;flex-direction:column;gap:8px;margin:0 0 17px;line-height:1.5;font-size:13px;font-weight:600;}
+.payment-modal>label input,.payment-modal>label textarea{width:100%;min-width:0;padding:12px 13px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font:inherit;font-weight:400;line-height:1.5;}
+.payment-modal>label input:focus,.payment-modal>label textarea:focus{outline:2px solid rgba(46,125,50,.18);border-color:var(--primary,#2e7d32);}
+.payment-modal .modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px;}
+@media(max-width:480px){.payment-summary{grid-template-columns:1fr;gap:5px;padding:15px}.payment-summary b{margin-bottom:8px}.payment-modal .modal-actions{flex-direction:column-reverse}.payment-modal .modal-actions .button{width:100%;justify-content:center}}
