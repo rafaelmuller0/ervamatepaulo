@@ -22,3 +22,22 @@
 .action-cell .debt-pay{margin-right:5px;}
 @media(max-width:850px){.debt-grid{grid-template-columns:minmax(0,1fr);gap:14px;margin:16px 0 20px}.page-content>section.table-panel>.panel-head{align-items:flex-start;flex-direction:column}.page-content>section.table-panel>.panel-head .search-box{width:100%;flex-basis:auto}.page-content>section.table-panel table{min-width:700px}}
 @media(max-width:540px){.debt-grid .settings-panel{padding:16px}.page-content>section.table-panel>.panel-head{padding:16px}.page-content>section.table-panel td,.page-content>section.table-panel th{padding:12px 13px}}
+
+
+/* Ajustes de espaçamento e hierarquia visual em Devedores */
+.page-content section.table-panel .panel-head{padding:20px 22px;gap:16px;}
+.page-content section.table-panel .panel-head>div{min-width:0;}
+.page-content section.table-panel .panel-head h3{margin:0 0 7px;line-height:1.45;font-size:15px;}
+.page-content section.table-panel .panel-head p{margin:0;line-height:1.55;font-size:12px;}
+.page-content section.table-panel>.empty-state{min-height:170px;padding:30px 20px;gap:0;}
+.page-content section.table-panel>.empty-state h3{margin:14px 0 7px;line-height:1.45;}
+.page-content section.table-panel>.empty-state p{max-width:560px;line-height:1.65;margin:0 0 8px;}
+.page-content section.table-panel>.helper{padding:18px 22px;line-height:1.6;}
+.debt-grid .settings-panel{padding:24px;gap:0;}
+.debt-grid .settings-panel h3{margin:0 0 22px;line-height:1.45;}
+.debt-grid .settings-panel label{display:flex;flex-direction:column;align-items:stretch;gap:9px;margin:0 0 18px;line-height:1.5;color:var(--text);font-size:12px;font-weight:600;}
+.debt-grid .settings-panel label input,.debt-grid .settings-panel label select,.debt-grid .settings-panel label textarea{display:block;margin-top:0;min-height:42px;padding:11px 13px;line-height:1.45;}
+.debt-grid .settings-panel label textarea{min-height:88px;}
+.debt-grid .settings-panel>.button{align-self:flex-start;margin-top:2px;}
+.page-content section.table-panel table td small{display:block;margin-top:5px;line-height:1.45;color:var(--muted);}
+@media(max-width:850px){.page-content section.table-panel .panel-head{padding:17px 16px}.debt-grid .settings-panel{padding:18px}.page-content section.table-panel>.helper{padding:16px}}
