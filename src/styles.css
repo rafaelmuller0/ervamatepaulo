@@ -3,3 +3,22 @@
 /* Gestão de devedores e contas a receber */
 .debt-grid{align-items:start}.debt-grid .settings-panel{display:flex;flex-direction:column;gap:14px}.debt-grid .settings-panel h3{display:flex;align-items:center;gap:8px;margin:0 0 4px}.debt-grid .settings-panel label{display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:12px;font-weight:600}.debt-grid .settings-panel input,.debt-grid .settings-panel select,.debt-grid .settings-panel textarea{width:100%;min-width:0;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text);padding:10px 12px;font:inherit;font-weight:400;outline:none}.debt-grid .settings-panel textarea{min-height:78px;resize:vertical}.debt-grid .settings-panel input:focus,.debt-grid .settings-panel select:focus,.debt-grid .settings-panel textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px #2e7d321a}.debt-balance{color:#b45309}.debt-pay{padding:7px 10px;font-size:11px;white-space:nowrap}.debt-grid+.table-panel{margin-top:20px}.table-panel .panel-head .search-box{max-width:310px}.table-panel .panel-head .search-box input{min-width:0}
 @media(max-width:850px){.debt-grid{grid-template-columns:1fr}.table-panel .panel-head{align-items:flex-start;flex-direction:column}.table-panel .panel-head .search-box{max-width:none;width:100%}}
+
+
+/* Layout refinado para contas a receber, clientes e histórico */
+.debt-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:22px 0 26px;}
+.debt-grid .settings-panel{min-width:0;padding:22px;gap:13px;}
+.page-content>section.table-panel{margin:0 0 20px;}
+.page-content>section.table-panel>.panel-head{padding:19px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;}
+.page-content>section.table-panel>.panel-head>div:first-child{min-width:220px;}
+.page-content>section.table-panel>.panel-head h3{font-size:15px;line-height:1.4;margin:0 0 5px;}
+.page-content>section.table-panel>.panel-head p{line-height:1.5;}
+.page-content>section.table-panel>.panel-head .search-box{width:min(100%,340px);flex:0 1 340px;}
+.page-content>section.table-panel table{min-width:760px;}
+.page-content>section.table-panel td,.page-content>section.table-panel th{padding:14px 16px;vertical-align:middle;}
+.page-content>section.table-panel .table-footer{padding:14px 20px;line-height:1.5;}
+.action-cell{white-space:nowrap;min-width:88px;}
+.action-cell .tiny-icon{margin-right:3px;}
+.action-cell .debt-pay{margin-right:5px;}
+@media(max-width:850px){.debt-grid{grid-template-columns:minmax(0,1fr);gap:14px;margin:16px 0 20px}.page-content>section.table-panel>.panel-head{align-items:flex-start;flex-direction:column}.page-content>section.table-panel>.panel-head .search-box{width:100%;flex-basis:auto}.page-content>section.table-panel table{min-width:700px}}
+@media(max-width:540px){.debt-grid .settings-panel{padding:16px}.page-content>section.table-panel>.panel-head{padding:16px}.page-content>section.table-panel td,.page-content>section.table-panel th{padding:12px 13px}}
