@@ -88,3 +88,14 @@
 a[href*="lovable.dev"] {
   display: none !important;
 }
+
+
+/* Seleção de produto ao registrar uma dívida */
+.debt-new-product{display:flex;flex-direction:column;gap:12px;margin:2px 0 18px;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface-soft,#f6f8f5);}
+.debt-new-product h4{display:flex;align-items:center;gap:8px;margin:0 0 2px;font-size:14px;line-height:1.4;color:var(--text);}
+.debt-new-product>label{margin:0!important;}
+.debt-product-prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+.debt-product-prices label{min-width:0;margin:0!important;}
+.debt-new-product p,.debt-product-note{margin:0 0 16px;color:var(--muted);font-size:12px;line-height:1.65;}
+.debt-product-note{padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--surface-soft,#f6f8f5);}
+@media(max-width:520px){.debt-new-product{padding:14px}.debt-product-prices{grid-template-columns:minmax(0,1fr)}}
