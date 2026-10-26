@@ -38,6 +38,115 @@ export type Database = {
         }
         Relationships: []
       }
+      devedores: {
+        Row: {
+          criado_em: string
+          endereco: string
+          id: string
+          nome: string
+          observacoes: string
+          telefone: string
+          user_id: string
+        }
+        Insert: {
+          criado_em?: string
+          endereco?: string
+          id?: string
+          nome: string
+          observacoes?: string
+          telefone?: string
+          user_id: string
+        }
+        Update: {
+          criado_em?: string
+          endereco?: string
+          id?: string
+          nome?: string
+          observacoes?: string
+          telefone?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      dividas: {
+        Row: {
+          criado_em: string
+          data_vencimento: string
+          descricao: string
+          devedor_id: string
+          id: string
+          saldo: number
+          status: string
+          user_id: string
+          valor_original: number
+        }
+        Insert: {
+          criado_em?: string
+          data_vencimento: string
+          descricao?: string
+          devedor_id: string
+          id?: string
+          saldo: number
+          status?: string
+          user_id: string
+          valor_original: number
+        }
+        Update: {
+          criado_em?: string
+          data_vencimento?: string
+          descricao?: string
+          devedor_id?: string
+          id?: string
+          saldo?: number
+          status?: string
+          user_id?: string
+          valor_original?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "dividas_devedor_id_fkey"
+            columns: ["devedor_id"]
+            isOneToOne: false
+            referencedRelation: "devedores"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      pagamentos_dividas: {
+        Row: {
+          divida_id: string
+          id: string
+          observacao: string
+          pago_em: string
+          user_id: string
+          valor: number
+        }
+        Insert: {
+          divida_id: string
+          id?: string
+          observacao?: string
+          pago_em?: string
+          user_id: string
+          valor: number
+        }
+        Update: {
+          divida_id?: string
+          id?: string
+          observacao?: string
+          pago_em?: string
+          user_id?: string
+          valor?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "pagamentos_dividas_divida_id_fkey"
+            columns: ["divida_id"]
+            isOneToOne: false
+            referencedRelation: "dividas"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       produtos: {
         Row: {
           categoria: string
@@ -132,7 +241,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      registrar_pagamento_divida: {
+        Args: { p_divida_id: string; p_observacao?: string; p_valor: number }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
